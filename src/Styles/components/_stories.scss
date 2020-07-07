@@ -1,0 +1,12 @@
+.stories{
+    display:grid;
+    grid-template-columns: 24rem 24rem 24rem;
+    justify-content: center;
+    margin-bottom: 10rem;
+    grid-gap: 1rem;
+}
+.container-header{
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding: 1.2rem 4.5rem;
+}
