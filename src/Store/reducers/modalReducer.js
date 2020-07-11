@@ -4,7 +4,7 @@ import { updateObject } from "../utility";
 const intialState = {
   loading: false,
   error: null,
-  show: true,
+  show: false,
 };
 
 const postStart = (state, action) => {
@@ -16,7 +16,7 @@ const postStart = (state, action) => {
 const postSucced = (state, action) => {
   return updateObject(state, {
     loading: false,
-    show:false,
+    show: false,
   });
 };
 const postFailed = (state, action) => {
@@ -28,6 +28,9 @@ const postFailed = (state, action) => {
 const modalClose = (state, action) => {
   return updateObject(state, { show: false });
 };
+const modalOpen = (state, action) => {
+  return updateObject(state, { show: true });
+};
 
 const reducer = (state = intialState, action) => {
   switch (action.type) {
@@ -38,7 +41,9 @@ const reducer = (state = intialState, action) => {
     case actionTypes.POSTING_STORY_FAIL:
       return postFailed(state, action);
     case actionTypes.MODAL_CLOSE:
-      return modalClose(state,action);
+      return modalClose(state, action);
+    case actionTypes.MODAL_OPEN:
+      return modalOpen(state, action);
     default:
       return state;
   }

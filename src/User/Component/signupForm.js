@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../../Store/actions/index';
+import { useEffect } from 'react';
 
 function SignupForm(props) {
     const[fullName,setFullName]=useState('');
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
     const[confirmPassword,setConfirmPassword]=useState('');
+    const [errorMessage, setErrorMessage] = useState(null)
 
     const submitHandler=(event)=>{
         event.preventDefault()
@@ -18,7 +20,13 @@ function SignupForm(props) {
             confirmPassword:confirmPassword,
             isSignup:true,
         };
+        if(password===confirmPassword && fullName.trim()!==''){
         props.signup(form);
+        }else if(password!==confirmPassword){
+            setErrorMessage("Password doesn't match")
+        }else{
+            setErrorMessage("Please enter your name")
+        }
         // console.log(form);
     }
     const fullNameHandler=(event)=>{
@@ -33,11 +41,16 @@ function SignupForm(props) {
     const confirmPasswordHandler=(event)=>{
         setConfirmPassword(event.target.value);
     }
+
+    const {error}=props
+    useEffect(()=>{
+        setErrorMessage(error)
+    },[error])
     return (
         <div className='box-layout__box'>
             <h1 className='heading-1 title'>Story Club</h1>
             <p className='heading-3'>Get Started - It's free</p>
-            <p className="error">{props.error}</p>
+            <p className="error">{errorMessage}</p>
             <form className='form' onSubmit={submitHandler}>
                 <input  className='text-input' placeholder='Full Name' fullname='fullName' value={fullName} type='text' onChange={fullNameHandler} />
                 <input  className='text-input' placeholder='E-mail' email='email' value={email} type='email' onChange={emailHandler} />

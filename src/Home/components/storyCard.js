@@ -5,6 +5,8 @@ function storyCard(props) {
     return (
        <div className="story-card">
            <div className="story-card__title" onClick={props.postEditor}>{props.card.title}</div>
+              {(props.userId===props.card.userId)?(
+                  <>
                 <button className="icon-button" onClick={props.postEditor}>
                     <svg className='icon__delete'>
                         <use href={sprite + '#icon-trash-can'}></use>
@@ -15,11 +17,12 @@ function storyCard(props) {
                         <use href={sprite + '#icon-document-edit'}></use>
                     </svg>
                 </button>
-             <div className="story-card__body"  onClick={props.postEditor}>
+                </>):<div onClick={props.postEditor} />}
+             <div className="story-card__body" onClick={props.postEditor}>
              {props.card.body}
              </div>
                <button className="written-by story-card__by" onClick={props.profileViewer}>
-                   <div className="">by-Abhinandan&nbsp;</div>
+              <div className="">by-{props.card.userName}&nbsp;</div>
               </button>
        </div>
     )

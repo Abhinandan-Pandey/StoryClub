@@ -104,7 +104,7 @@ button:disabled {
   border: none;
   outline: none;
   color: #FAFAFA;
-  margin-left: 15rem;
+  margin-left: 6rem;
   background-color: transparent; }
 
 .navigation {
@@ -119,7 +119,7 @@ button:disabled {
   font-size: 2rem;
   font-weight: 600;
   color: #FAFAFA;
-  margin-right: 15rem;
+  margin-right: 6rem;
   align-self: right; }
 
 .introHeader {
@@ -172,7 +172,7 @@ button:disabled {
   .story-card > * {
     margin-left: 1rem; }
   .story-card__title {
-    grid-column: 1/title-end;
+    grid-column: 1 / title-end;
     font-size: 2rem;
     font-weight: 500; }
   .story-card__body {
@@ -180,7 +180,9 @@ button:disabled {
     grid-row: body/body-end;
     grid-column: 1/-1;
     font-size: 1.5rem;
-    font-weight: 400; }
+    font-weight: 400;
+    text-align: justify;
+    padding: .5rem 1.0rem 2.5rem; }
   .story-card__by {
     grid-row: by/-1;
     grid-column: 1/-1;
@@ -200,7 +202,7 @@ button:disabled {
     width: 2rem;
     margin-left: 1rem;
     position: absolute;
-    margin-top: .6rem;
+    margin-top: 0.6rem;
     margin-right: 2rem; }
   .story-card .icon__delete {
     display: grid;
@@ -212,14 +214,14 @@ button:disabled {
     width: 2rem;
     margin-left: 1rem;
     position: absolute;
-    margin-top: .6rem; }
+    margin-top: 0.6rem; }
 
 .icon-button {
   border: none;
   outline: none;
   background-color: transparent;
   align-self: self-start;
-  margin-left: -.4rem; }
+  margin-left: -0.4rem; }
 
 .written-by {
   border: none;
@@ -390,6 +392,12 @@ input[type='text'] {
   padding: .5rem;
   margin-bottom: .5rem; }
 
+.box {
+  position: fixed;
+  z-index: 500;
+  width: 100%;
+  top: 0; }
+
 .backdrop {
   width: 100%;
   height: 100%;
@@ -411,7 +419,8 @@ input[type='text'] {
   justify-items: center;
   z-index: 500;
   width: 60rem;
-  height: 19rem;
+  min-height: 19rem;
+  max-height: none;
   background-color: #F8BBD0; }
   .storyModal input::placeholder {
     font-size: 1.4rem; }
@@ -471,6 +480,23 @@ input[type='text'] {
   color: #364051;
   margin-left: 16rem;
   margin-left: 32rem; }
+
+.error-modal {
+  font-size: 1.8rem;
+  color: red;
+  margin-top: .6rem;
+  margin-left: 1rem; }
+
+.stories-spinner {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  background-color: darkgray;
+  position: fixed;
+  left: 0;
+  top: 0; }
 
 .lds-roller {
   display: inline-block;
@@ -554,3 +580,16 @@ input[type='text'] {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.text {
+  margin-top: 1rem;
+  font-size: 2rem; }
+
+.redirectButton {
+  border: none;
+  outline: none;
+  color: blue;
+  font-size: 2rem;
+  background-color: transparent;
+  margin-left: 1rem;
+  border-bottom-style: double; }

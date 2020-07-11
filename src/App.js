@@ -1,42 +1,26 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Login from "./User/Pages/login";
 import Stories from "./Home/pages/stories";
 import Profile from "./Home/pages/profile";
-import Layout from "./Hoc/layout";
 import * as actions from "./Store/actions/index";
-import storyModel from "./Home/components/storyModel";
-import profileEditModel from "./Home/components/profileEditModel";
+import PublicRoute from "./Router/publicRoute";
+import PrivateRoute from "./Router/privateRoute";
+import NotFoundPage from "./Home/pages/notFoundPage";
 
 function App(props) {
-  const { onTryAutoSignup } = props;
-  useEffect(() => {
-    onTryAutoSignup();
-  }, [onTryAutoSignup]);
+  props.onTryAutoSignup();
 
-  let routes = (
+  const routes = (
     <Switch>
-      <Route path="/" exact component={Login} />
-      <Redirect to="/" />
+      <PublicRoute path="/" exact component={Login} />
+      <PrivateRoute path="/home" exact component={Stories} />
+      <PrivateRoute path="/profile/:uid" exact component={Profile} />
+      <Route component={NotFoundPage} />
     </Switch>
   );
-
-  if (props.isAuthenticated) {
-    routes = (
-      <Layout {...props}>
-        <Switch>
-          <Route path="/home" exact component={Stories} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/" exact component={Login} />
-          <Route path="/storyModel" component={storyModel} />
-          <Route path="/profileEditModel" component={profileEditModel} />
-          <Redirect to="/home" />
-        </Switch>
-      </Layout>
-    );
-  }
 
   return <div>{routes}</div>;
 }
@@ -44,7 +28,6 @@ function App(props) {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.token !== null,
-    path: state.auth.path,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -53,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default connect(mapStateToProps, mapDispatchToProps)(App);

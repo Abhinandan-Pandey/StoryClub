@@ -1,15 +1,19 @@
-export {
-    auth,
-    logout,
-    authCheckState,
-    authRedirectPath
-} from './authAction';
+export { auth, logout, authCheckState } from "./authAction";
 
 export {
   fetchingStory,
-} from './storiesAction';
+  fetchUserProfile,
+  deletedStory,
+  updatedStory,
+  addedStory,
+  updatedProfile,
+} from "./storiesAction";
 
-export{
+export {
   postingStory,
   modalClose,
-} from './modalAction';
+  modalOpen,
+  patchStory,
+  deleteStory,
+  editProfile,
+} from "./modalAction";
