@@ -1,4 +1,5 @@
 {
+  "homepage":"https://Abhinandan-Pandey.github.io/StoryClub",
   "name": "story-club",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +24,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm-run-all --parallel watch:scss startApp"
+    "start": "npm-run-all --parallel watch:scss startApp",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }

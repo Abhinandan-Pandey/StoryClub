@@ -114,7 +114,8 @@ function StoryModal(props) {
   
   if (props.type === "newPost") {
     deletePostButton = (
-      <button className="delete-post" 
+      <button className="delete-post"
+      style={{ visibility: "hidden" }} 
       onClick={deletePostHandler}>
         delete
       </button>
@@ -169,7 +170,7 @@ function StoryModal(props) {
                     value={story["title"]}
                     onChange={(e) => inputChangeHandler(e, "title")}
                   ></input>
-                  <textarea style={{height:'25rem'}}
+                  <textarea 
                     className="modal-body"
                     placeholder="text"
                     value={story["body"]}
