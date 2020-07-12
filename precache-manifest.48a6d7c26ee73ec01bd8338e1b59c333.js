@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "717e6bb105eafb1d6c36d7c1cd71134b",
+    "revision": "8e4299c35b8b990b2bdfd2b23e518e2b",
     "url": "/StoryClub/index.html"
   },
   {
-    "revision": "ea87caf584ed845842bc",
+    "revision": "c177f62e6e1c2f83de07",
     "url": "/StoryClub/static/css/main.697c4f61.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/StoryClub/static/js/2.4bc3f18e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ea87caf584ed845842bc",
-    "url": "/StoryClub/static/js/main.646d1573.chunk.js"
+    "revision": "c177f62e6e1c2f83de07",
+    "url": "/StoryClub/static/js/main.60e31927.chunk.js"
   },
   {
     "revision": "43fc1c4e1cebcc200409",
