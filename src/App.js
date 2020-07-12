@@ -18,6 +18,7 @@ function App(props) {
       <PublicRoute path="/" exact component={Login} />
       <PrivateRoute path="/home" exact component={Stories} />
       <PrivateRoute path="/profile/:uid" exact component={Profile} />
+      <PrivateRoute path="/StoryClub" exact component={Stories} />
       <Route component={NotFoundPage} />
     </Switch>
   );
