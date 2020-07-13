@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import Textarea from 'react-textarea-autosize';
+
 
 import * as actions from "../../Store/actions/index";
 import Spinner from "../../Utilities/spinner";
@@ -135,8 +137,6 @@ function StoryModal(props) {
   post
 </button>
   }
-
-  
   // console.log(props.card)
   return (
     <div className="box">
@@ -170,12 +170,14 @@ function StoryModal(props) {
                     value={story["title"]}
                     onChange={(e) => inputChangeHandler(e, "title")}
                   ></input>
-                  <textarea 
+                  <Textarea 
                     className="modal-body"
                     placeholder="text"
                     value={story["body"]}
+                    minRows={5} 
+                    maxRows={25}
                     onChange={(e) => inputChangeHandler(e, "body")}
-                  ></textarea>
+                  ></Textarea>
                 </form>
                 <div className="modal-footer">
                   {checkBoxButton}

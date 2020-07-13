@@ -7,6 +7,8 @@ import ProfileEditModel from "../../Home/components/profileEditModel";
 import Spinner from '../../Utilities/spinner';
 import * as actions from '../../Store/actions/index';
 import StoryModal from '../../Home/components/storyModel';
+import axios from "../../axios";
+import withErrorHandler from "../../Hoc/withErrorHandler";
 
 function Profile(props) { 
   const [profileDetails, setProfileDetails] = useState({
@@ -244,4 +246,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Profile,axios));

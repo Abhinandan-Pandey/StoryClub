@@ -38,6 +38,8 @@
     }
     textarea{
         font-size: 1.8rem;
+        // overflow: auto;
+        // height:20rem;
     }
 }
 .modal-title{
@@ -51,7 +53,7 @@
 }
 .modal-body{
     background-color: transparent;
-    height: 12rem;
+    // height: 12rem;
     width: 100%;
     padding: 1rem;
     border: none;

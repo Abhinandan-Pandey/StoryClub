@@ -4,7 +4,7 @@ import Backdrop from './backdrop';
 
 const modal = props => {
   return (
-    <>
+    <React.Fragment>
       <Backdrop show={props.show} clicked={props.modalClosed} />
       <div
         className='modal'
@@ -15,7 +15,7 @@ const modal = props => {
       >
         {props.children}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

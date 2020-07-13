@@ -11,7 +11,11 @@ import PrivateRoute from "./Router/privateRoute";
 import NotFoundPage from "./Home/pages/notFoundPage";
 
 function App(props) {
-  props.onTryAutoSignup();
+const{onTryAutoSignup}=props
+  // useLayoutEffect(() => {
+    onTryAutoSignup()
+  // }, [onTryAutoSignup])
+console.log(props.isAuthenticated)
 
   const routes = (
     <Switch>
