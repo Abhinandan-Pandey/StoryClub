@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/StoryClub/static/css/main.7255c1a5.chunk.css",
-    "main.js": "/StoryClub/static/js/main.45796e25.chunk.js",
-    "main.js.map": "/StoryClub/static/js/main.45796e25.chunk.js.map",
+    "main.js": "/StoryClub/static/js/main.416bbf06.chunk.js",
+    "main.js.map": "/StoryClub/static/js/main.416bbf06.chunk.js.map",
     "runtime-main.js": "/StoryClub/static/js/runtime-main.9e23d568.js",
     "runtime-main.js.map": "/StoryClub/static/js/runtime-main.9e23d568.js.map",
     "static/js/2.e2ce8397.chunk.js": "/StoryClub/static/js/2.e2ce8397.chunk.js",
     "static/js/2.e2ce8397.chunk.js.map": "/StoryClub/static/js/2.e2ce8397.chunk.js.map",
     "index.html": "/StoryClub/index.html",
-    "precache-manifest.bffbc53c7d76dbb61f3919b90555a59a.js": "/StoryClub/precache-manifest.bffbc53c7d76dbb61f3919b90555a59a.js",
+    "precache-manifest.1f8628464bb5e125370110b9131c7ab7.js": "/StoryClub/precache-manifest.1f8628464bb5e125370110b9131c7ab7.js",
     "service-worker.js": "/StoryClub/service-worker.js",
     "static/css/main.7255c1a5.chunk.css.map": "/StoryClub/static/css/main.7255c1a5.chunk.css.map",
     "static/js/2.e2ce8397.chunk.js.LICENSE.txt": "/StoryClub/static/js/2.e2ce8397.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.9e23d568.js",
     "static/js/2.e2ce8397.chunk.js",
     "static/css/main.7255c1a5.chunk.css",
-    "static/js/main.45796e25.chunk.js"
+    "static/js/main.416bbf06.chunk.js"
   ]
 }
