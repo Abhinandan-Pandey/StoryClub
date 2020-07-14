@@ -8,16 +8,16 @@ import StoryModal from "../../Home/components/storyModel";
 import axios from "../../axios";
 import withErrorHandler from "../../Hoc/withErrorHandler";
 
-function Stories(props) {useEffect(()=>{
-  console.log('mount s')
-  return () => {
-    //  axios.interceptors.request.eject(reqInterceptor);
-    //  axios.interceptors.response.eject(resInterceptor);
-      console.log('unmount s')
-    };
-},[])
+function Stories(props) {
+  // useEffect(() => {
+  //   console.log("mount s");
+  //   return () => {
+  //     //  axios.interceptors.request.eject(reqInterceptor);
+  //     //  axios.interceptors.response.eject(resInterceptor);
+  //     console.log("unmount s");
+  //   };
+  // }, []);
   const [storyModal, setStoryModal] = useState(null);
-
   const { fetchStories, token } = props;
   const viewProfileHandler = () => {
     const uid = props.userId;
@@ -38,27 +38,66 @@ function Stories(props) {useEffect(()=>{
   const [stories, setStories] = useState([]);
   const { storiesArray } = props;
   useEffect(() => {
-    setStories(storiesArray);
+    setStories(storiesArray); 
   }, [storiesArray]);
-
-  let storyCards;
-  if (!props.loading) {
-    // console.log(stories,updateStory,deleteStory)
+  const divideStories = (publicStories) => {
+    var total = publicStories.length;
+    var each = total / 3;
+    var left = total - 3*Math.floor(total/ 3);
+    var f, s ;
+    var  fe, ss, se;
+    f = s = each;
+    if (left === 1) {
+      f += 1;
+    } else if (left === 2) {
+      f +=1;
+      s += 1;
+    }
+    // fs=0;
+    fe=f-1;
+    ss=fe+1;
+    se=fe+s;
+    // ts=se+1;
+    // te=total-1;
+    return { fe,ss, se };
+  };
+  let storyCards=null
+  let storyCol1=[]
+  let storyCol2=[]
+  let storyCol3=[]
+  if (stories.length!==0) { 
     const publicStories = stories.filter((card) => card.privacy === false);
-    storyCards = publicStories.map((card, i) => {
-      return (
-        <StoryCard
+      publicStories.forEach((card, i) => {
+      const {fe,ss, se}=divideStories(publicStories);
+      if(i<=fe){
+        storyCol1.push(<StoryCard
           key={card.title + i}
           postEditor={() => postEditorHandler("editPost", card)}
           profileViewer={() => ProfileHandler(card.userId)}
           card={card}
           userId={props.userId}
-        />
-      );
+        />)
+      }else if(i<=se && i>=ss){
+        storyCol2.push(<StoryCard
+          key={card.title + i}
+          postEditor={() => postEditorHandler("editPost", card)}
+          profileViewer={() => ProfileHandler(card.userId)}
+          card={card}
+          userId={props.userId}
+        />)
+      }else{
+        storyCol3.push(<StoryCard
+          key={card.title + i}
+          postEditor={() => postEditorHandler("editPost", card)}
+          profileViewer={() => ProfileHandler(card.userId)}
+          card={card}
+          userId={props.userId}
+        />)
+      }
     });
     if (publicStories.length === 0) {
       storyCards = <h1>No Post Found</h1>;
-    }
+    } 
   }
 
   return (
@@ -77,7 +116,12 @@ function Stories(props) {useEffect(()=>{
             </button>
           </div>
           <div className="container-header">Public Stories</div>
-          <div className="stories">{storyCards}</div>
+          <div className='grid-container'>
+            {storyCards}
+          <div className="stories">{storyCol1}</div>
+          <div className="stories">{storyCol2}</div>
+          <div className="stories">{storyCol3}</div>
+          </div>
         </>
       ) : (
         <div className="stories-spinner">

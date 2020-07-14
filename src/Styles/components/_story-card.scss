@@ -5,13 +5,14 @@
   box-shadow: 0rem 0rem 1rem $silver;
   padding: 1.1rem;
   position: relative;
-  // align-content: center;
   background-color: $Chantilly;
-
+  margin-bottom: 1rem;
   > * {
     margin-left: 1rem;
   }
-
+@media (max-width:$middle-breakpoint) {
+  grid-template-columns: [title]minmax(16rem,1fr) [title-end edit]3rem [edit-end delete]3rem;
+}
   &__title {
     grid-column: 1 / title-end;
     font-size: 2rem;
@@ -38,10 +39,10 @@
     word-spacing: 1rem;
   }
 
+  transition: background .3s ease-in-out;
   &:hover {
-    background-color: $white;
+      background: lighten($Chantilly, 10%);
   }
-
   .icon {
     &__edit {
       display: grid;
@@ -82,4 +83,5 @@
   outline: none;
   background-color: transparent;
   margin-left: 1rem;
+  word-spacing: 0rem;
 }

@@ -12,10 +12,7 @@ import NotFoundPage from "./Home/pages/notFoundPage";
 
 function App(props) {
 const{onTryAutoSignup}=props
-  // useLayoutEffect(() => {
-    onTryAutoSignup()
-  // }, [onTryAutoSignup])
-console.log(props.isAuthenticated)
+    onTryAutoSignup();
 
   const routes = (
     <Switch>
@@ -30,15 +27,11 @@ console.log(props.isAuthenticated)
   return <div>{routes}</div>;
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isAuthenticated: state.auth.token !== null,
-  };
-};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     onTryAutoSignup: () => dispatch(actions.authCheckState()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

@@ -4,12 +4,14 @@ import { Route, Redirect } from "react-router-dom";
 
 import Header from "../Header/navigation";
 
-export const PrivateRoute = ({ isAutheticated,component:Component ,...rest }) => (
+export const PrivateRoute = ({ isAuthenticated,component:Component ,...rest }) => {
+  // console.log(isAuthenticated,Component,rest)
+  return(
   <div>
     <Route
       {...rest}
       component={(props) =>
-        isAutheticated ? (
+        isAuthenticated ? (
           <div>
             <Header {...props}/>
             <Component {...props} />
@@ -21,10 +23,10 @@ export const PrivateRoute = ({ isAutheticated,component:Component ,...rest }) =>
     />
   </div>
 );
-
+}
 const mapStateToProps = (state) => {
   return {
-    isAutheticated: state.auth.token != null,
+    isAuthenticated: state.auth.token != null,
   };
 };
 

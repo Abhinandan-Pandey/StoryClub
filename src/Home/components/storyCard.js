@@ -3,7 +3,7 @@ import sprite from '../../Styles/img/sprite.svg';
 
 function storyCard(props) {
     return (
-       <div className="story-card">
+       <div className="story-card" onClick={props.postEditor}>
            <div className="story-card__title" onClick={props.postEditor}>{props.card.title}</div>
               {(props.userId===props.card.userId)?(
                   <>

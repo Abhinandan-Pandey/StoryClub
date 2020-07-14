@@ -100,18 +100,59 @@ function Profile(props) {
       }
   },[userData,loadingUserData,loadingUserStory])
 
-  let storyCards=<Spinner/>
+  const divideStories = (publicStories) => {
+    var total = publicStories.length;
+    var each = total / 3;
+    var left = total - 3*Math.floor(total/ 3);
+    var f, s ;
+    var  fe, ss, se;
+    f = s = each;
+    if (left === 1) {
+      f += 1;
+    } else if (left === 2) {
+      f +=1;
+      s += 1;
+    }
+    // fs=0;
+    fe=f-1;
+    ss=fe+1;
+    se=fe+s;
+    // ts=se+1;
+    // te=total-1;
+    return { fe,ss, se };
+  };
+  let storyCards=null
+  let storyCol1=[]
+  let storyCol2=[]
+  let storyCol3=[]
   if(!props.loadingUserData && !props.loadingUserStory){
-   storyCards = props.stories.map((card,i) => {
-    return (
-      <StoryCard
-        key={card.title+i}
-        postEditor={()=>postEditorHandler('editPost',card)}
-        profileViewer={viewProfileHandler}
+  props.stories.forEach((card, i) => {
+    const {fe,ss, se}=divideStories(props.stories);
+    if(i<=fe){
+      storyCol1.push(<StoryCard
+        key={card.title + i}
+        postEditor={() => postEditorHandler("editPost", card)}
+       profileViewer={viewProfileHandler}
         card={card}
         userId={props.loggedInUserId}
-      />
-    );
+      />)
+    }else if(i<=se && i>=ss){
+      storyCol2.push(<StoryCard
+        key={card.title + i}
+        postEditor={() => postEditorHandler("editPost", card)}
+       profileViewer={viewProfileHandler}
+        card={card}
+        userId={props.userId}
+      />)
+    }else{
+      storyCol3.push(<StoryCard
+        key={card.title + i}
+        postEditor={() => postEditorHandler("editPost", card)}
+       profileViewer={viewProfileHandler}
+        card={card}
+        userId={props.userId}
+      />)
+    }
   });
   if(props.stories.length===0){
     storyCards=<h1>No Post Found</h1>
@@ -216,9 +257,12 @@ function Profile(props) {
         </div>):null}
         
         <div className="container-header">Recent Posts</div>
-        <div className="stories">
-          {storyCards}
-        </div>
+       <div className='grid-container'>
+            {storyCards}
+          <div className="stories">{storyCol1}</div>
+          <div className="stories">{storyCol2}</div>
+          <div className="stories">{storyCol3}</div>
+          </div>
       </div>
       </>}
     </>
