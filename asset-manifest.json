@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/StoryClub/static/css/main.f62934b3.chunk.css",
+    "main.css": "/StoryClub/static/css/main.7255c1a5.chunk.css",
     "main.js": "/StoryClub/static/js/main.45796e25.chunk.js",
     "main.js.map": "/StoryClub/static/js/main.45796e25.chunk.js.map",
     "runtime-main.js": "/StoryClub/static/js/runtime-main.9e23d568.js",
@@ -8,9 +8,9 @@
     "static/js/2.e2ce8397.chunk.js": "/StoryClub/static/js/2.e2ce8397.chunk.js",
     "static/js/2.e2ce8397.chunk.js.map": "/StoryClub/static/js/2.e2ce8397.chunk.js.map",
     "index.html": "/StoryClub/index.html",
-    "precache-manifest.76de0c203b56dfb741245179826be714.js": "/StoryClub/precache-manifest.76de0c203b56dfb741245179826be714.js",
+    "precache-manifest.bffbc53c7d76dbb61f3919b90555a59a.js": "/StoryClub/precache-manifest.bffbc53c7d76dbb61f3919b90555a59a.js",
     "service-worker.js": "/StoryClub/service-worker.js",
-    "static/css/main.f62934b3.chunk.css.map": "/StoryClub/static/css/main.f62934b3.chunk.css.map",
+    "static/css/main.7255c1a5.chunk.css.map": "/StoryClub/static/css/main.7255c1a5.chunk.css.map",
     "static/js/2.e2ce8397.chunk.js.LICENSE.txt": "/StoryClub/static/js/2.e2ce8397.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/StoryClub/static/media/cover_page.45ee5357.jpg",
     "static/media/sprite.svg": "/StoryClub/static/media/sprite.417b38a5.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.9e23d568.js",
     "static/js/2.e2ce8397.chunk.js",
-    "static/css/main.f62934b3.chunk.css",
+    "static/css/main.7255c1a5.chunk.css",
     "static/js/main.45796e25.chunk.js"
   ]
 }
