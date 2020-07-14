@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/StoryClub/precache-manifest.9c84f59c25d7972daafb09abdfb573bc.js"
+  "/StoryClub/precache-manifest.76de0c203b56dfb741245179826be714.js"
 );
 
 self.addEventListener('message', (event) => {
