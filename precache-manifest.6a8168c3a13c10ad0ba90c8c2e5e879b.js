@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "620e4affdcbfb35354aef5691fdc726e",
+    "revision": "a9ffd1fdcd0d88b1f1e2ff26733c488d",
     "url": "/StoryClub/index.html"
   },
   {
-    "revision": "731daaaa57a78f6ac796",
-    "url": "/StoryClub/static/css/main.7255c1a5.chunk.css"
+    "revision": "5f964e4a4ebaefbe9a2b",
+    "url": "/StoryClub/static/css/main.b415f36c.chunk.css"
   },
   {
-    "revision": "e267ea59bf6656cdc359",
-    "url": "/StoryClub/static/js/2.e2ce8397.chunk.js"
+    "revision": "bb7b14ea83c6d501ab9f",
+    "url": "/StoryClub/static/js/2.83c98922.chunk.js"
   },
   {
-    "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/StoryClub/static/js/2.e2ce8397.chunk.js.LICENSE.txt"
+    "revision": "f42d151f61898dd9d5ffe0d9c5238b3c",
+    "url": "/StoryClub/static/js/2.83c98922.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "731daaaa57a78f6ac796",
-    "url": "/StoryClub/static/js/main.416bbf06.chunk.js"
+    "revision": "5f964e4a4ebaefbe9a2b",
+    "url": "/StoryClub/static/js/main.5aee1c8b.chunk.js"
   },
   {
     "revision": "43fc1c4e1cebcc200409",
