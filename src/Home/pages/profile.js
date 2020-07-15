@@ -8,6 +8,7 @@ import Spinner from '../../Utilities/spinner';
 import * as actions from '../../Store/actions/index';
 import StoryModal from '../../Home/components/storyModel';
 import axios from "../../axios";
+import ImageUpload from '../../Utilities/imageUpload';
 import withErrorHandler from "../../Hoc/withErrorHandler";
 
 function Profile(props) { 
@@ -55,8 +56,9 @@ function Profile(props) {
   const userProfile={
    coverQuote: profileDetails['coverQuote'],
     bio:profileDetails['bio'],
-    location:profileDetails['location']
-  }
+    location:profileDetails['location'],
+  };
+  // console.log(userProfile)
   props.editProfile(props.userData.userDataId,props.token,userProfile)
   }
   const newPostHandler = () => {
@@ -71,10 +73,6 @@ function Profile(props) {
     // console.log(data,'data')
     setStoryModal(<StoryModal type={type} card={data}/>)
     props.storyModalOpen();
-  };
-
-  const imageUploader = () => {
-    console.log("image");
   };
   
   const {fetchUserProfile,token,userData,loadingUserStory,loadingUserData}=props;
@@ -142,7 +140,7 @@ function Profile(props) {
         postEditor={() => postEditorHandler("editPost", card)}
        profileViewer={viewProfileHandler}
         card={card}
-        userId={props.userId}
+        userId={props.loggedInUserId}
       />)
     }else{
       storyCol3.push(<StoryCard
@@ -150,7 +148,7 @@ function Profile(props) {
         postEditor={() => postEditorHandler("editPost", card)}
        profileViewer={viewProfileHandler}
         card={card}
-        userId={props.userId}
+        userId={props.loggedInUserId}
       />)
     }
   });
@@ -187,21 +185,7 @@ function Profile(props) {
             save={()=>saveEditHandler('coverQuote')}/>
           )}
         </div>
-        <div className="user-profile">
-          <div className="user">
-            <svg className="icon-user">
-              <use href={sprite + "#icon-user"}></use>
-            </svg>
-            <button className="img-button" onClick={imageUploader}>
-              <div className="image">
-                <svg className="icon-image">
-                  <use href={sprite + "#icon-image"}></use>
-                </svg>
-                <p className="caption">Upload Profile pic</p>
-              </div>
-            </button>
-          </div>
-        </div>
+        <ImageUpload/>
         <div className="sub-header">
           <div className="sub-items">
           <h2 className="name">{props.userData.fullName}</h2>
