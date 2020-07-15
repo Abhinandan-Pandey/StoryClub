@@ -51,7 +51,7 @@ export const fetchingUserStorySucced = (stories) => {
 export const fetchingUserDataSucced = (stories) => {
   let userDataArray = Object.keys(stories).map((key) => {
     return { ...stories[key], userDataId: key };
-  });
+  }); 
   return {
     type: actionTypes.FETCH_USER_DATA_SUCCESS,
     userData: userDataArray[0],

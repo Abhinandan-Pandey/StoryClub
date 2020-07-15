@@ -294,14 +294,20 @@ button:disabled {
   align-items: center;
   background: linear-gradient(180deg, #8737c2 50%, #FAFAFA 0); }
 
-.user {
+.user-image {
   display: flex;
   flex-direction: column;
   border: 2px solid #1c88bf;
   margin-top: 2rem;
-  width: 15rem; }
-  .user:hover div.image {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden; }
+  .user-image:hover div.image {
     opacity: 1; }
+  .user-image img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover; }
 
 .icon-image {
   fill: white;
@@ -368,6 +374,9 @@ button:disabled {
   margin-top: 2.5rem;
   margin-bottom: 3rem;
   background-color: #FAFAFA; }
+  @media (max-width: 39em) {
+    .new-post {
+      width: 60%; } }
 
 .inputStyle {
   border: none;
@@ -442,6 +451,7 @@ input[type='text'] {
   flex-direction: column;
   justify-items: center;
   z-index: 500;
+  min-width: 30rem;
   min-height: 19rem;
   max-height: none;
   background-color: #F8BBD0; }
