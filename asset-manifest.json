@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/StoryClub/static/css/main.b415f36c.chunk.css",
-    "main.js": "/StoryClub/static/js/main.5aee1c8b.chunk.js",
-    "main.js.map": "/StoryClub/static/js/main.5aee1c8b.chunk.js.map",
+    "main.css": "/StoryClub/static/css/main.7bdcd362.chunk.css",
+    "main.js": "/StoryClub/static/js/main.6cfdbd74.chunk.js",
+    "main.js.map": "/StoryClub/static/js/main.6cfdbd74.chunk.js.map",
     "runtime-main.js": "/StoryClub/static/js/runtime-main.9e23d568.js",
     "runtime-main.js.map": "/StoryClub/static/js/runtime-main.9e23d568.js.map",
     "static/js/2.83c98922.chunk.js": "/StoryClub/static/js/2.83c98922.chunk.js",
     "static/js/2.83c98922.chunk.js.map": "/StoryClub/static/js/2.83c98922.chunk.js.map",
     "index.html": "/StoryClub/index.html",
-    "precache-manifest.6a8168c3a13c10ad0ba90c8c2e5e879b.js": "/StoryClub/precache-manifest.6a8168c3a13c10ad0ba90c8c2e5e879b.js",
+    "precache-manifest.b64af45a1175aa37033d466e83dd86a4.js": "/StoryClub/precache-manifest.b64af45a1175aa37033d466e83dd86a4.js",
     "service-worker.js": "/StoryClub/service-worker.js",
-    "static/css/main.b415f36c.chunk.css.map": "/StoryClub/static/css/main.b415f36c.chunk.css.map",
+    "static/css/main.7bdcd362.chunk.css.map": "/StoryClub/static/css/main.7bdcd362.chunk.css.map",
     "static/js/2.83c98922.chunk.js.LICENSE.txt": "/StoryClub/static/js/2.83c98922.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/StoryClub/static/media/cover_page.45ee5357.jpg",
     "static/media/sprite.svg": "/StoryClub/static/media/sprite.417b38a5.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.9e23d568.js",
     "static/js/2.83c98922.chunk.js",
-    "static/css/main.b415f36c.chunk.css",
-    "static/js/main.5aee1c8b.chunk.js"
+    "static/css/main.7bdcd362.chunk.css",
+    "static/js/main.6cfdbd74.chunk.js"
   ]
 }
