@@ -11,9 +11,9 @@ export default httpClient => {
       res => res,
       err => {
         setError(err);
+        return Promise.reject(err);
       }
     );
-
     useEffect(() => {
       return () => {
         httpClient.interceptors.request.eject(reqInterceptor);

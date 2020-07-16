@@ -64,7 +64,7 @@ export const fetchingUserStoryStart = () => {
 };
 export const fetchingUserStoryFail = (error) => {
   return {
-    type: actionTypes.FETCH_USER_STORY_START,
+    type: actionTypes.FETCH_USER_STORY_FAIL,
     userStoryError: error,
   };
 };

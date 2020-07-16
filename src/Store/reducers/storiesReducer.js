@@ -2,7 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 import { updateObject } from "../utility";
 
 const intialState = {
-  loading: false,
+  loading: true,
   error: null,
   stories: [],
   userData: null,
@@ -47,7 +47,7 @@ const fetchUserStorySuccess = (state, action) => {
 };
 const fetchUserDataFail = (state, action) => {
   return updateObject(state, {
-    loadingUserData: false,
+    // loadingUserData: false,
     errorUserData: action.userDataError,
   });
 };
