@@ -9,14 +9,6 @@ import axios from "../../axios";
 import withErrorHandler from "../../Hoc/withErrorHandler";
 
 function Stories(props) {
-  // useEffect(() => {
-  //   console.log("mount s");
-  //   return () => {
-  //     //  axios.interceptors.request.eject(reqInterceptor);
-  //     //  axios.interceptors.response.eject(resInterceptor);
-  //     console.log("unmount s");
-  //   };
-  // }, []);
   const [storyModal, setStoryModal] = useState(null);
   const { fetchStories, token } = props;
   const viewProfileHandler = () => {
@@ -95,11 +87,10 @@ function Stories(props) {
         />)
       }
     });
-    if (publicStories.length === 0) {
-      storyCards = <h1>No Post Found</h1>;
-    } 
   }
-
+  if (stories.length === 0) {
+    storyCards = <h1>No Post Found</h1>;
+  } 
   return (
     <>
       {!props.loading ? (
